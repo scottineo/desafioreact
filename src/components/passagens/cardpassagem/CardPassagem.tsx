@@ -1,4 +1,9 @@
-function Passagem() {
+import type Passagem from "../../../models/Passagem";
+
+interface CardPassagemProps {
+  passagem: Passagem;
+}
+function CardPassagem({ passagem }: CardPassagemProps) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-center bg-cover">
       <div className="max-w-md w-full h-full mx-auto z-10 bg-blue-900 rounded-3xl">
@@ -128,4 +133,4 @@ function Passagem() {
   );
 }
 
-export default Passagem;
+export default CardPassagem;
