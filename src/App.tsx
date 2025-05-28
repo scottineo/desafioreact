@@ -5,22 +5,27 @@ import Footer from "./components/footer/Footer";
 import Banner from "./components/banner/Banner";
 import BannerServicos from "./components/bannerservicos/BannerServicos";
 import FaleConosco from "./components/faleconosco/FaleConosco";
+import Passagem from "./components/passagens/cardpassagem/CardPassagem";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Banner />
-        <BannerServicos />
-        <FaleConosco />
-        <div>
-          <Routes>
-            <Route path="/" />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Banner />
+          <BannerServicos />
+          <FaleConosco />
+          <Passagem />
+          <div>
+            <Routes>
+              <Route path="/" />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }
