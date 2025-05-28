@@ -6,6 +6,7 @@ import Banner from "./components/banner/Banner";
 import BannerServicos from "./components/bannerservicos/BannerServicos";
 import FaleConosco from "./components/faleconosco/FaleConosco";
 import Passagem from "./components/passagens/cardpassagem/CardPassagem";
+import ListPassagens from "./components/passagens/listpassagens/ListPassagens";
 import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <div>
             <Routes>
               <Route path="/" />
+              <Route path="/passagens" element={<ListPassagens />} />
             </Routes>
           </div>
           <Footer />

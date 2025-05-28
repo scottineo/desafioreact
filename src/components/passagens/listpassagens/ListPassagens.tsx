@@ -36,3 +36,4 @@ function ListPassagens() {
     );
   }
 }
+export default ListPassagens;
