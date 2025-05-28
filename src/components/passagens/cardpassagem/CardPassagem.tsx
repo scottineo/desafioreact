@@ -108,8 +108,10 @@ function CardPassagem({ passagem }: CardPassagemProps) {
                 </div>
                 <div className="flex items-center px-5 pt-3 text-sm">
                   <div className="flex flex-col">
-                    <span>Passanger</span>
-                    <div className="font-semibold">Ajimon</div>
+                    <span>Passageiro</span>
+                    <div className="font-semibold">
+                      {passagem.passageiro?.nome}
+                    </div>
                   </div>
                   <div className="flex flex-col mx-auto">
                     <span>Class</span>

@@ -20,18 +20,18 @@ function ListPassagens() {
     } catch (error) {
       console.error("Erro ao buscar passagens:", error);
     }
-
-    useEffect(() => {
-      if (token === "") {
-        alert("Você precisa estar logado");
-        navigate("/");
-      }
-    }, [token]);
-
-    useEffect(() => {
-      buscarPassagens();
-    }, [passagens.length]);
   }
+
+  useEffect(() => {
+    if (token === "") {
+      alert("Você precisa estar logado");
+      navigate("/");
+    }
+  }, [token]);
+
+  useEffect(() => {
+    buscarPassagens();
+  }, [passagens.length]);
   return (
     <>
       <div className="flex justify-center w-full my-4">
