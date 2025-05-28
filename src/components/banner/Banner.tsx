@@ -1,6 +1,6 @@
 function Banner() {
   return (
-    <div className="w-full bg-(--back) text-white flex flex-col items-center justify-center h-[400px]">
+    <div className="w-full bg-(--back) text-white flex flex-col items-center justify-center h-screen">
       <h1 className="font-bold text-xl">Bem-vinde à Aperture</h1>
       <p>Aqui o seu ponto de vista é válioso.</p>
       <button

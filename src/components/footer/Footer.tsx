@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="w-full bg-green-950 text-white p-4 ">
+      <footer className="w-full bg-green-950 text-white p-4 relative bottom-0">
         <div className="flex justify-between gap-4 p-2">
           <div className="container flex flex-col gap-4">
             <h2>Sobre</h2>
