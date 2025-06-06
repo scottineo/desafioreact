@@ -2,11 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import Banner from "./components/banner/Banner";
-import BannerServicos from "./components/bannerservicos/BannerServicos";
-import FaleConosco from "./components/faleconosco/FaleConosco";
-import Passagem from "./components/passagens/cardpassagem/CardPassagem";
+import ListPassagens from "./components/passagens/listpassagens/ListPassagens";
 import { AuthProvider } from "./contexts/AuthContext";
+import Login from "./pages/login/Login";
+import Home from "./pages/home/Home";
 
 function App() {
   return (
@@ -14,13 +13,13 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Navbar />
-          <Banner />
-          <BannerServicos />
-          <FaleConosco />
-          <Passagem />
+
           <div>
             <Routes>
-              <Route path="/" />
+              <Route path="/" element={<Login />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/passagens" element={<ListPassagens />} />
             </Routes>
           </div>
           <Footer />

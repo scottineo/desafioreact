@@ -1,6 +1,17 @@
 import { ApertureIcon } from "@phosphor-icons/react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 function Navbar() {
+  const navigate = useNavigate();
+
+  const { handleLogout } = useContext(AuthContext);
+
+  function logout() {
+    handleLogout();
+    alert("O Usuário foi desconectado com sucesso!");
+    navigate("/");
+  }
   return (
     <div className="w-full bg-green-950 flex place-content-between text-white p-4">
       <div className="object-left">
@@ -9,9 +20,16 @@ function Navbar() {
         </Link>
       </div>
       <div className="flex gap-4 justify-center items-center">
-        <button type="button">Início</button>
+        <Link to="/home" className="text-2xl font-bold">
+          Início
+        </Link>
         <button type="button">Serviços</button>
-        <button type="button">Contato</button>
+        <Link to="/login" className="text-2xl font-bold">
+          Login
+        </Link>
+        <Link to="" onClick={logout} className="hover:underline">
+          Sair
+        </Link>
       </div>
     </div>
   );
