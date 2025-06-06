@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import Banner from "./components/banner/Banner";
 import ListPassagens from "./components/passagens/listpassagens/ListPassagens";
 import { AuthProvider } from "./contexts/AuthContext";
 import Login from "./pages/login/Login";
@@ -14,8 +13,7 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Navbar />
-          <Banner />
-          <Home />
+
           <div>
             <Routes>
               <Route path="/" element={<Login />} />

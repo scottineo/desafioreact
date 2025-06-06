@@ -15,10 +15,17 @@ function ListPassagens() {
   async function buscarPassagens() {
     try {
       await buscar("/passagens", setPassagens, {
-        headers: { Authorization: token },
+        headers: {
+          Authorization: token,
+        },
       });
-    } catch (error) {
-      console.error("Erro ao buscar passagens:", error);
+    } catch (error: any) {
+      if (
+        error.toString().includes("403") ||
+        error.toString().includes("401")
+      ) {
+        handleLogout();
+      }
     }
   }
 
@@ -32,6 +39,7 @@ function ListPassagens() {
   useEffect(() => {
     buscarPassagens();
   }, [passagens.length]);
+
   return (
     <>
       <div className="flex justify-center w-full my-4">

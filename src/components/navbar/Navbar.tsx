@@ -24,7 +24,9 @@ function Navbar() {
           Início
         </Link>
         <button type="button">Serviços</button>
-        <button type="button">Contato</button>
+        <Link to="/login" className="text-2xl font-bold">
+          Login
+        </Link>
         <Link to="" onClick={logout} className="hover:underline">
           Sair
         </Link>
